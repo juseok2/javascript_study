@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    
+<body>
+    <h1 id="result"></h1>
+
+    <script>
+        const result = document.getElementById('result');
+        //일반적인 함수
+        /*
+        function add(a,b){
+            return a+b;
+        }
+        */
+
+        //화살표 함수
+        const add = (a,b) =>{
+            return a+b;
+        } 
+
+        result.textContent = add(3,4);
+        result.style.color = 'blue';
+        result.style.fontSize = '48px'
+    </script>
+</body>
+</html>

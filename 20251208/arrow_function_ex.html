@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="askBtn">물음 버튼</button>
+    <script>
+        //아래 함수를 화살표 함수로 만들기
+        // function ask(question, yes, no) {
+        //     if (confirm(question)) yes()
+        //     else no();
+        // }
+
+        // ask(
+        // "동의하십니까?",
+        // function() { alert("동의하셨습니다."); },
+        // function() { alert("취소 버튼을 누르셨습니다."); }
+        // );
+    const ask = (question,yes,no) => {
+        if(confirm(question)){
+            yes();
+        }
+        else no();
+    }
+
+    const button = document.getElementById('askBtn');
+
+    button.addEventListener('click', () => {
+        ask(
+            '동의하십니까?',
+            () => alert("동의하셨습니다."),
+            () => alert("취소 버튼을 누르셨습니다.")
+        );
+    });
+    
+    </script>
+    
+</body>
+</html>
