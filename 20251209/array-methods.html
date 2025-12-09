@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="numbers">
+
+    </div>
+    <div id="evens">
+
+    </div>
+    <div id="found">
+
+    </div>
+    <script>
+        const numbers = [1,2,3,4,5];
+        const doubled = numbers.map(num => num * 2);
+        const numberBlock = document.getElementById('numbers');
+        const evensBlock = document.getElementById('evens');
+        const foundBlock = document.getElementById('found');
+
+        //map : 배열을 순회하며 반환
+        numberBlock.innerHTML = doubled.map(num => `<p>${num}</p>`).join('');
+
+        //filter : 배열을 순회하며 조건에 해당하는 값을 배열로 반환
+        const evens = numbers.filter(num => num % 2 === 0);
+        evensBlock.innerHTML = `<p>${evens.map(num => num).join('-')}</p>`;
+
+        //find : 배열을 순회하며 조건에 해당하는 값중 제일 첫번째 값 하나를 반환
+        const found = numbers.find(num => num > 3);
+        foundBlock.innerHTML = `<p>3보다 큰 값중 제일 첫번째 값임:${found}</p>`;
+    </script>   
+</body>
+</html>
