@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="contents">
+
+    </div>
+    <div id="copy">
+
+    </div>
+    <div id="add">
+
+    </div>
+    <div id="rank">
+
+    </div>
+    <script>
+        
+        const users = [
+            {name: '주석', rank: 28},
+            {name: '오떤데', rank: 250},
+            {name: '꾸뫄', rank: 4},
+        ]
+
+            const copyUsers =  [...users];
+            const addFriend = [...copyUsers, {name: '에어브릭', rank: 32}];
+            const updateRank = {...users[0], rank : 6};
+
+        document.getElementById('contents').innerHTML = '원본: ' + users.map(({name, rank}) => `<p>${name}: ${rank}위</p>`).join('');
+        document.getElementById('copy').innerHTML = '복사본: ' + copyUsers.map(({name, rank}) => `<p>${name}: ${rank}위</p>`).join('');
+        document.getElementById('add').innerHTML = '추가: ' + addFriend.map(({name, rank}) => `<p>${name}: ${rank}위</p>`).join('');
+        document.getElementById('rank').innerHTML = '랭킹 업데이트: ' + updateRank.name + ' ' + updateRank.rank + '위';
+    </script>
+    
+</body>
+</html>
