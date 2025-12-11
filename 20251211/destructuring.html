@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="sortBtn">랭킹순 정렬</button>
+    <div id="contents">
+
+    </div>
+    <script>
+        const contents = document.getElementById('contents');
+        const users = [
+            {name: '주석', rank: 28},
+            {name: '오떤데', rank: 250},
+            {name: '꾸뫄', rank: 4},
+        ]
+
+        const [first, second, third] = users;
+
+        users.map(user => {
+            //비구조화 할당
+            const {name, rank} = user;
+            contents.innerHTML += `<p>이름 : ${name} 랭킹 : ${rank}</p>`;
+        });
+
+        document.getElementById('sortBtn').addEventListener('click',() => {
+            users.sort((a,b) => a.rank - b.rank);
+
+            contents.innerHTML = '';
+
+            users.map(({name , rank}) => {     
+                contents.innerHTML += `<p>이름 : ${name} 랭킹 : ${rank}</p>`;
+            });
+            
+        });
+        
+    </script>
+</body>
+</html>
